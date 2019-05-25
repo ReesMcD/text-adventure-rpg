@@ -10,7 +10,9 @@ class Build(ABC):
 
     def __init__(self, file_name):
         cwd = os.getcwd()
-        self.path = os.path.join(cwd, "game", "content", file_name)
+        game_path = "game"
+        content_path = "content"
+        self.path = os.path.join(cwd, game_path, content_path, file_name)
 
     @abstractmethod
     def build(self):
@@ -20,4 +22,4 @@ class Build(ABC):
         with open(self.path) as json_data:
             data = json.load(json_data)
 
-        return data
+        return dict(data)

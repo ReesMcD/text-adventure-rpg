@@ -1,17 +1,26 @@
-from game.build.items import BuildItems
-import os
+from game.build.buildAll import BuildAll
+from engine.base.items.weapon import Weapon
+import sys
 
-def main():
-    build = BuildItems()
-    build.build()
-    # # # Get Item
-    # item = Item().get("Iron Sword")
-    # item.print()
-    # #
-    # # # Update Item
-    # item.update("Iron Sword", "value", 5)
-    # item.print()
+
+def main(arg):
+    print(arg)
+    if arg == "build":
+        print("Build Started")
+        build = BuildAll()
+        build.build()
+    elif arg == "play":
+        print("Play Script")
+        # Get Item
+        item = Weapon().get("Longsword")
+        item.print()
+        #
+        # # Update Item
+        item.update("Longsword", "value", 5)
+        item.print()
+    else:
+        print("Command not recognized")
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1])

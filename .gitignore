@@ -1,2 +1,3 @@
 venv
-./src/db.json
+__pycache__/
+/src/db.json

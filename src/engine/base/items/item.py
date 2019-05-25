@@ -5,7 +5,7 @@ PK = "name"
 
 
 class Item(Model):
-    """Class used for simple items."""
+    """ Class used for simple items. """
 
     def __init__(self, name="", type="", value=0, rarity="", weight=0, desc=""):
         super().__init__(TABLE, PK)

@@ -1,4 +1,6 @@
-from .build import Build
+from .abstractBuild import Build
+from engine.base.items.item import Item
+from engine.base.items.weapon import Weapon
 
 
 class BuildItems(Build):
@@ -6,8 +8,20 @@ class BuildItems(Build):
 
     def __init__(self):
         super().__init__("items.json")
+
         itemData = self.importData()
-        self.rarity = itemData["rarity"]
+        self.weapons = itemData["weapons"]
 
     def build(self):
-        print(self.rarity)
+        print("Building Items...")
+
+        print("Building Weapons...")
+        weapons = self.weapons
+        for key, value in weapons.items():
+            print("Added {}".format(value["name"]))
+            weapon = Weapon(
+                value["name"], value["type"], value["value"], value["rarity"],
+                value["weight"], value["desc"], value["damage"], value["weaponType"],
+                value["weaponRange"])
+
+            weapon.save()
