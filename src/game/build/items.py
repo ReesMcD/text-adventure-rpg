@@ -1,4 +1,4 @@
-from .abstractBuild import Build
+from .build import Build
 from engine.base.items.item import Item
 from engine.base.items.weapon import Weapon
 

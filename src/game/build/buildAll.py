@@ -3,6 +3,8 @@ import json
 
 
 class BuildAll():
+    ''' Builds all objects for the game. '''
+
     def __init__(self):
         print("Initializing Build...")
         self.buildItems = BuildItems()

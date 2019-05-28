@@ -14,7 +14,7 @@ def main(arg):
         # Get Item
         item = Weapon().get("Longsword")
         item.print()
-        #
+
         # # Update Item
         item.update("Longsword", "value", 5)
         item.print()

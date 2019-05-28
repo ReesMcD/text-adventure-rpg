@@ -2,7 +2,7 @@ from .item import Item
 
 
 class Weapon(Item):
-    ''' Weapon class for characters to use'''
+    ''' Weapons that will be used by playable characters and npcs'''
 
     def __init__(self, name="", type="", value=0, rarity="", weight=0, desc="",
         damage=0, weaponType="", weaponRange=0):
