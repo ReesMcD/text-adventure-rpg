@@ -1,6 +1,6 @@
 from engine.core.model import Model
 from engine.base.classes.class import Class
-from engine.base.inventory import Inventory
+from engine.base.statblock import StatBlock
 from abc import abstractmethod
 
 TABLE = "classes"
@@ -11,8 +11,8 @@ class CharacterClass(Model):
     ''' Abstract class for Character Classes'''
 
     def __init__(
-      self, name: str, classType="", hitPoints=0, stats={},
-      armorClass=0, abilites={}, actions={}):
+      self, name: str, classType: str, hitPoints: number, stats: StatBlock,
+      armorClass: number, abilites={}, actions={}):
         super().__init__(TABLE, PK)
         self.name = name
         self.hitPoints = hitPoints

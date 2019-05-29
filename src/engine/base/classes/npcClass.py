@@ -1,9 +1,7 @@
-from engine.base.classes import CharacterClass
+from engine.base.classes.characterClass import CharacterClass
 from engine.base.statblock import StatBlock
 from engine.base.inventory import Inventory
-
-TABLE = "npc_classes"
-PK = "name"
+from engine.base.placeholders.placeholder import statBlock
 
 
 class NPCClass(CharacterClass):
@@ -12,8 +10,8 @@ class NPCClass(CharacterClass):
     """
 
     def __init__(
-      self, name="", classType="", hitPoints=0, stats={}, armorClass=0,
-      abilites={}, actions={}, challengeRating=""):
+      self, name="", classType="", hitPoints=0, stats=statblock, armorClass=0,
+      abilites={}, actions={}, challengeRating=0):
 
         super().__init__(
           name, classType, hitPoints, stats, armorClass, abilites, actions)
