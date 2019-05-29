@@ -1,6 +1,5 @@
+''' Character Module '''
 from engine.core.model import Model
-from engine.base.classes.class import Class
-from engine.base.inventory import Inventory
 from abc import abstractmethod
 
 TABLE = "characters"
@@ -9,12 +8,10 @@ PK = "name"
 
 class Character(Model):
     def __init__(
-      self, name: str, playerClass: Class, inventory: Inventory,
-      maxHitPoints: number, currentHitPoints: number):
+      self, name: str, race: str, class_name: str, inventory: dict):
 
         super().__init__(TABLE, PK)
         self.name = name
-        self.playerClass = playerClass
+        self.race = race
+        self.class_name = class_name
         self.inventory = inventory
-        self.maxHitPoints = playerClass.hitPoints
-        slef.currentHitPoints = self.maxHitPoints

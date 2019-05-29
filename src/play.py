@@ -1,23 +1,25 @@
-from game.build.buildAll import BuildAll
-from engine.base.items.weapon import Weapon
+''' play script '''
 import sys
+from game.build.buildall import BuildAll
+from engine.base.characters.npc import NPC
 
 
 def main(arg):
-    print(arg)
     if arg == "build":
         print("Build Started")
         build = BuildAll()
         build.build()
+
     elif arg == "play":
         print("Play Script")
-        # Get Item
-        item = Weapon().get("Longsword")
-        item.print()
 
-        # # Update Item
-        item.update("Longsword", "value", 5)
-        item.print()
+        npc = NPC(
+            "Jon Snow", "Human", "Commoner", {"item": (1, "Shortsword")},
+            {"inital": "Hello World"})
+
+        npc.print()
+        npc.save()
+
     else:
         print("Command not recognized")
 

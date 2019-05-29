@@ -1,7 +1,13 @@
-from engine.base.classes.characterClass import CharacterClass
-from engine.base.statblock import StatBlock
-from engine.base.inventory import Inventory
-from engine.base.placeholders.placeholder import statBlock
+from engine.base.classes.characterclass import CharacterClass
+
+STAT_BLOCK = {
+    "strength": 0,
+    "dexterity": 0,
+    "constitution": 0,
+    "intelligence": 0,
+    "wisdom": 0,
+    "charisma": 0
+}
 
 
 class NPCClass(CharacterClass):
@@ -10,17 +16,16 @@ class NPCClass(CharacterClass):
     """
 
     def __init__(
-      self, name="", classType="", hitPoints=0, stats=statblock, armorClass=0,
-      abilites={}, actions={}, challengeRating=0):
+        self, name="", class_type="", hit_points=0, stats=STAT_BLOCK, armor_class=0,
+        abilites={}, actions={}, challenge_rating=0):
 
         super().__init__(
-          name, classType, hitPoints, stats, armorClass, abilites, actions)
-        self.challengeRating = challengeRating
+            name, class_type, hit_points, stats, armor_class, abilites, actions)
+        self.challenge_rating = challenge_rating
 
     def print(self):
         """Prints full character info, ie Name, Race, Stats, etc.  """
         print("Class: {}".format(self.name))
-        self.stats.print()
-        print("Armor Class: {}".format(self.armorClass))
-        print("CR: {}".format(self.challengeRating))
-        # TODO: Abilites and Actions
+        print("Armor Class: {}".format(self.armor_class))
+        print("CR: {}".format(self.challenge_rating))
+       # TODO: Abilites and Actions

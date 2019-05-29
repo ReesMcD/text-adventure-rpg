@@ -1,8 +1,14 @@
 from engine.base.classes import CharacterClass
-from engine.base.statblock import StatBlock
 
-TABLE = "npc_classes"
-PK = "name"
+STAT_BLOCK = {
+    "strength": 0,
+    "dexterity": 0,
+    "constitution": 0,
+    "intelligence": 0,
+    "wisdom": 0,
+    "charisma": 0
+}
+
 
 
 class PlayerClass(CharacterClass):
@@ -11,16 +17,16 @@ class PlayerClass(CharacterClass):
     """
 
     def __init__(
-      self, name="", classType="", hitPoints=0, stats={}, armorClass=0,
-      abilites={}, actions={}, hitDice=0):
+      self, name="", class_type="", hit_points=0, stats=STAT_BLOCK, armor_class=0,
+      abilites={}, actions={}, hit_dice=0):
 
         super().__init__(
-          name, classType, hitPoints, stats, armorClass, abilites, actions)
-        self.hitDice = hitDice
+          name, class_type, hit_points, stats, armor_class, abilites, actions)
+        self.hit_dice = hit_dice
 
     def print(self):
         """Prints full character class info. """
         print("Class: {}".format(self.name))
         self.stats.print()
-        print("Armor Class: {}".format(self.armorClass))
+        print("Armor Class: {}".format(self.armor_class))
         # TODO: Abilites and Actions

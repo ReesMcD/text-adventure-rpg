@@ -1,8 +1,24 @@
 {
-  "npcClasses": {
-
+  "npc_classes": {
+    "commoner": {
+      "name": "Commoner",
+      "class_type": "npc",
+      "hit_points": 10,
+      "stats": {
+        "strength": 10,
+        "dexterity": 10,
+        "constitution": 10,
+        "intelligence": 10,
+        "wisdom": 10,
+        "charisma": 10
+      },
+      "armor_class": 10,
+      "abilites": {},
+      "actions": {},
+      "challenge_rating": 0
+    }
   },
-  "pcClasses":{
-    
+  "pc_classes":{
+
   }
 }

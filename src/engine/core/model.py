@@ -35,12 +35,12 @@ class Model(ABC):
 
         return self
 
-    def update(self, queryValue: str, key: str, update):
+    def update(self, query_value: str, key: str, update):
         '''
         Updates a field in an object in a given object.
         '''
         db = Database()
-        update = db.update(self.table, self.pk, queryValue, key, update)
+        update = db.update(self.table, self.pk, query_value, key, update)
         self.get(self.name)
 
     def __dictToObj(self, dict: dict):

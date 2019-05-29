@@ -21,7 +21,7 @@ class BuildItems(Build):
             print("Added {}".format(value["name"]))
             weapon = Weapon(
                 value["name"], value["type"], value["value"], value["rarity"],
-                value["weight"], value["desc"], value["damage"], value["weaponType"],
-                value["weaponRange"])
+                value["weight"], value["desc"], value["damage"], value["weapon_type"],
+                value["weapon_range"])
 
             weapon.save()
