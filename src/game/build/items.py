@@ -9,8 +9,8 @@ class BuildItems(Build):
     def __init__(self):
         super().__init__("items.json")
 
-        itemData = self.importData()
-        self.weapons = itemData["weapons"]
+        item_data = self.importData()
+        self.weapons = item_data["weapons"]
 
     def build(self):
         print("Building Items...")

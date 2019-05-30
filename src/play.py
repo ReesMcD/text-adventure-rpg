@@ -13,12 +13,9 @@ def main(arg):
     elif arg == "play":
         print("Play Script")
 
-        npc = NPC(
-            "Jon Snow", "Human", "Commoner", {"item": (1, "Shortsword")},
-            {"inital": "Hello World"})
-
-        npc.print()
-        npc.save()
+        jon_snow = NPC()
+        jon_snow.get("Jon Snow")
+        jon_snow.print()
 
     else:
         print("Command not recognized")

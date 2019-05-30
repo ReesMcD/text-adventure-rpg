@@ -1,0 +1,18 @@
+{
+    "npc": {
+        "jon_snow": {
+            "name": "Jon Snow",
+            "race": "Human Child",
+            "class_name": "Commoner",
+            "inventory": {
+                "item": [
+                    1,
+                    "Shortsword"
+                ]
+            },
+            "dialoge": {
+                "inital": "Hello World"
+            }
+        }
+    }
+}

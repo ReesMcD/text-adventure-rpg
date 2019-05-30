@@ -29,9 +29,13 @@ class Model(ABC):
 
         Sets objects attributes.
         '''
-        db = Database()
-        result = db.search(self.table, self.pk, query)
-        self.__dictToObj(result[0])
+
+        try:
+            db = Database()
+            result = db.search(self.table, self.pk, query)
+            self.__dictToObj(result[0])
+        except IndexError:
+            print("\n ERROR - Object Not Found \n")
 
         return self
 

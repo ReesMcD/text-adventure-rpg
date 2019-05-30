@@ -1,5 +1,6 @@
 from .items import BuildItems
 from .classes import BuildClasses
+from .npcs import BuildNPCs
 import json
 
 
@@ -9,15 +10,17 @@ class BuildAll():
     def __init__(self):
         print("Initializing Build...")
         self.__clearDatabase()
-        self.buildItems = BuildItems()
-        self.buildClasses = BuildClasses()
+        self.build_items = BuildItems()
+        self.build_classes = BuildClasses()
+        self.build_npc = BuildNPCs()
 
     def build(self):
         print("Building...")
 
         self.__clearDatabase()
-        self.buildItems.build()
-        self.buildClasses.build()
+        self.build_items.build()
+        self.build_classes.build()
+        self.build_npc.build()
 
         print("Build Complete")
 

@@ -16,11 +16,11 @@ class NPCClass(CharacterClass):
     """
 
     def __init__(
-        self, name="", class_type="", hit_points=0, stats=STAT_BLOCK, armor_class=0,
+        self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK, armor_class=0,
         abilites={}, actions={}, challenge_rating=0):
 
         super().__init__(
-            name, class_type, hit_points, stats, armor_class, abilites, actions)
+            name, class_type, hitpoints, stats, armor_class, abilites, actions)
         self.challenge_rating = challenge_rating
 
     def print(self):

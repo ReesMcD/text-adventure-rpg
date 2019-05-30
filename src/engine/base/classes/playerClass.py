@@ -17,11 +17,11 @@ class PlayerClass(CharacterClass):
     """
 
     def __init__(
-      self, name="", class_type="", hit_points=0, stats=STAT_BLOCK, armor_class=0,
+      self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK, armor_class=0,
       abilites={}, actions={}, hit_dice=0):
 
         super().__init__(
-          name, class_type, hit_points, stats, armor_class, abilites, actions)
+          name, class_type, hitpoints, stats, armor_class, abilites, actions)
         self.hit_dice = hit_dice
 
     def print(self):
