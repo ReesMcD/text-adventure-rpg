@@ -17,7 +17,6 @@ class BuildAll():
     def build(self):
         print("Building...")
 
-        self.__clearDatabase()
         self.build_items.build()
         self.build_classes.build()
         self.build_npc.build()

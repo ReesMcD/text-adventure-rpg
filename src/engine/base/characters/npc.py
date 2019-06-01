@@ -9,7 +9,7 @@ class NPC(Character):
     """
 
     def __init__(
-      self, name="", race="", class_name="", inventory={}, dialoge={}):
+      self, name="", race="", class_name="", inventory={}, dialoge=""):
 
         super().__init__(name, race, class_name, inventory)
         self.dialoge = dialoge

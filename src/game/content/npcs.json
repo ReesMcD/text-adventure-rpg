@@ -10,9 +10,7 @@
                     "Shortsword"
                 ]
             },
-            "dialoge": {
-                "inital": "Hello World"
-            }
+            "dialoge": "jon_snow"
         }
     }
 }
