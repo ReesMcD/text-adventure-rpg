@@ -1,4 +1,4 @@
-''' '''
+''' Non Playable Characters '''
 from engine.base.characters.character import Character
 from engine.base.classes.npcclass import NPCClass
 from engine.core.database import Database
@@ -43,8 +43,13 @@ class NPC(Character):
         self.class_name = npc["class_name"]
         self.inventory = npc["inventory"]
         self.dialoge = npc["dialoge"]
-
-        self.__setPlayerClass(self.class_name)
+        self.max_hitpoints = npc["max_hitpoints"]
+        self.current_hitpoints = npc["current_hitpoints"]
+        self.armor_class = npc["armor_class"]
+        self.stats = npc["stats"]
+        self.actions = npc["actions"]
+        self.abilites = npc["abilites"]
+        self.challenge_rating = npc["challenge_rating"]
 
     def __setPlayerClass(self, class_name):
         player_class = NPCClass().get(class_name)
