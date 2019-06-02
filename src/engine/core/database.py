@@ -15,8 +15,10 @@ class Database():
         queryTable = self.database.table(table)
         queryTable.insert(obj)
 
-    def update(self, table: str, query_key: str, query_value: str, key: str, update):
+    def update(
+      self, table: str, query_key: str, query_value: str, key: str, update):
         query = Query()
         queryTable = self.database.table(table)
 
-        return queryTable.update({key: update}, query[query_key] == query_value)
+        return queryTable.update(
+            {key: update}, query[query_key] == query_value)

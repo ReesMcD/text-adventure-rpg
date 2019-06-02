@@ -1,3 +1,4 @@
+''' Player Playable Class '''
 from src.engine.base.classes.characterclass import CharacterClass
 
 STAT_BLOCK = {
@@ -11,9 +12,20 @@ STAT_BLOCK = {
 
 
 class PlayerClass(CharacterClass):
-    """
-    Player Classes
-    """
+    '''
+    Abstract class for players classes type.
+
+    Attributes:
+        name: String of the name of the class
+        class_type: String of the possible class types
+        hitpoints: Integer of the classes base hitpoints
+        stats: Dictionary that contains the classes stats
+        armor_class: Integer that denotes the classes armor rating
+        abilites: Dictionary of different class abilites
+        aciton: Dictionary of different actions a player with
+          this class can take
+        challenge_rating: Integer that denotes how difficult an NPC is
+    '''
 
     def __init__(
       self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK,

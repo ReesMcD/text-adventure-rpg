@@ -1,22 +1,37 @@
-''' Non Playable Characters '''
+''' Non Playable Character Class '''
 from src.engine.base.characters.character import Character
 from src.engine.base.classes.npcclass import NPCClass
 from src.engine.core.database import Database
 
 
 class NPC(Character):
-    """
-    An non playable character that could be encountered within the game
-    """
+    '''
+    NPC or Non Playable Character is a character within the game that a player
+    can interact with
 
+    Attributes:
+        name: String of the name of the character
+        race: String of the race of the character
+        class_name: String of the characters given player class
+        inventory: Dictionary of a characters inventory
+        dialoge: String that acts as a key for this characters dialog
+
+    '''
     def __init__(
       self, name="", race="", class_name="", inventory={}, dialoge=""):
 
         super().__init__(name, race, class_name, inventory)
         self.dialoge = dialoge
+        self.max_hitpoints = 0
+        self.current_hitpoints = 0
+        self.armor_class = 0
+        self.stats = {}
+        self.actions = {}
+        self.abilites = {}
+        self.challenge_rating = 0
 
-        if class_name: 
-            self.__setPlayerClass(class_name)
+        if class_name:
+            self.__set_player_class(class_name)
 
     def print(self):
         print()
@@ -32,8 +47,8 @@ class NPC(Character):
         print("Actions: {}".format(self.actions))
 
     def get(self, query):
-        db = Database()
-        result = db.search(self.table, self.pk, query)
+        database = Database()
+        result = database.search(self.table, self.pk, query)
         try:
             npc = result[0]
         except IndexError:
@@ -52,7 +67,7 @@ class NPC(Character):
         self.abilites = npc["abilites"]
         self.challenge_rating = npc["challenge_rating"]
 
-    def __setPlayerClass(self, class_name):
+    def __set_player_class(self, class_name):
         player_class = NPCClass().get(class_name)
         self.max_hitpoints = player_class.hitpoints
         self.current_hitpoints = self.max_hitpoints

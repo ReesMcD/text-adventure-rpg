@@ -1,22 +1,37 @@
-''' '''
+''' Playable Character Class '''
 from src.engine.base.characters.character import Character
 from src.engine.base.classes.playerclass import PlayerClass
 from src.engine.core.database import Database
 
 
 class Player(Character):
-    """
-    An playable character ac
-    """
+    '''
+    NPC or Non Playable Character is a character within the game that a player
+    can interact with
 
+    Attributes:
+        name: String of the name of the character
+        race: String of the race of the character
+        class_name: String of the characters given player class
+        inventory: Dictionary of a characters inventory
+        level: Integer that denotes a character's level
+
+    '''
     def __init__(
-      self, name="", race="", class_name="", inventory={}, level=1):
+      self, name="", race="", class_name="", inventory=None, level=1):
 
         super().__init__(name, race, class_name, inventory)
         self.level = level
+        self.max_hitpoints = 0
+        self.current_hitpoints = 0
+        self.armor_class = 0
+        self.stats = {}
+        self.actions = {}
+        self.abilites = {}
+        self.hit_dice = 0
 
         if class_name:
-            self.__setPlayerClass(class_name)
+            self.__set_player_class(class_name)
 
     def print(self):
         print()
@@ -28,7 +43,6 @@ class Player(Character):
         print("Stats: ")
         for key, value in self.stats.items():
             print(" {}:{}".format(key, value))
-        print("CR: {}".format(self.challenge_rating))
         print("Actions: {}".format(self.actions))
 
     def get(self, query):
@@ -52,7 +66,7 @@ class Player(Character):
         self.abilites = player["abilites"]
         self.hit_dice = player["hit_dice"]
 
-    def __setPlayerClass(self, class_name):
+    def __set_player_class(self, class_name):
         player_class = PlayerClass().get(class_name)
         self.max_hitpoints = player_class.hitpoints
         self.current_hitpoints = self.max_hitpoints
