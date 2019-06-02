@@ -3,6 +3,8 @@ from src.engine.base.characters.character import Character
 from src.engine.base.classes.npcclass import NPCClass
 from src.engine.core.database import Database
 
+TABLE = "npc"
+
 
 class NPC(Character):
     '''
@@ -20,7 +22,7 @@ class NPC(Character):
     def __init__(
       self, name="", race="", class_name="", inventory={}, dialoge=""):
 
-        super().__init__(name, race, class_name, inventory)
+        super().__init__(TABLE, name, race, class_name, inventory)
         self.dialoge = dialoge
         self.max_hitpoints = 0
         self.current_hitpoints = 0

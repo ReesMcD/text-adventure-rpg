@@ -3,6 +3,8 @@ from src.engine.base.characters.character import Character
 from src.engine.base.classes.playerclass import PlayerClass
 from src.engine.core.database import Database
 
+TABLE = "player"
+
 
 class Player(Character):
     '''
@@ -20,7 +22,7 @@ class Player(Character):
     def __init__(
       self, name="", race="", class_name="", inventory=None, level=1):
 
-        super().__init__(name, race, class_name, inventory)
+        super().__init__(TABLE, name, race, class_name, inventory)
         self.level = level
         self.max_hitpoints = 0
         self.current_hitpoints = 0
@@ -37,6 +39,7 @@ class Player(Character):
         print()
         print("------ {} ------".format(self.name))
         print("Race: {}".format(self.race))
+        print("Level: {}".format(self.level))
         print("Class: {}".format(self.class_name))
         print("HP: {}/{}".format(self.current_hitpoints, self.max_hitpoints))
         print("Armor Class: {}".format(self.armor_class))

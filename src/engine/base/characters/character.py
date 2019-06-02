@@ -16,13 +16,15 @@ class Character(Model):
         inventory: Dictionary of a characters inventory
 
     '''
-    def __init__(self, name: str, race: str, class_name: str, inventory: dict):
+    def __init__(
+      self, table: str, name: str, race: str, class_name: str,
+      inventory: dict):
 
-        super().__init__(TABLE, PK)
+        super().__init__(table, PK)
         self.name = name
         self.race = race
         self.class_name = class_name
         self.inventory = inventory
 
     def print(self):
-        print("Character")
+        pass
