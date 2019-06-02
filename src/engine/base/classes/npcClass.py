@@ -1,4 +1,4 @@
-from engine.base.classes.characterclass import CharacterClass
+from src.engine.base.classes.characterclass import CharacterClass
 
 STAT_BLOCK = {
     "strength": 0,
@@ -16,8 +16,8 @@ class NPCClass(CharacterClass):
     """
 
     def __init__(
-        self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK, armor_class=0,
-        abilites={}, actions={}, challenge_rating=0):
+        self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK,
+            armor_class=0, abilites={}, actions={}, challenge_rating=0):
 
         super().__init__(
             name, class_type, hitpoints, stats, armor_class, abilites, actions)
@@ -28,4 +28,4 @@ class NPCClass(CharacterClass):
         print("Class: {}".format(self.name))
         print("Armor Class: {}".format(self.armor_class))
         print("CR: {}".format(self.challenge_rating))
-       # TODO: Abilites and Actions
+        # TODO: Abilites and Actions

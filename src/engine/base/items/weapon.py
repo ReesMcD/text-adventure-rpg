@@ -4,8 +4,9 @@ from .item import Item
 class Weapon(Item):
     ''' Weapons that will be used by playable characters and npcs'''
 
-    def __init__(self, name="", type="", value=0, rarity="", weight=0, desc="",
-        damage=0, weapon_type="", weapon_range=0):
+    def __init__(
+        self, name="", type="", value=0, rarity="", weight=0,
+            desc="", damage=0, weapon_type="", weapon_range=0):
 
         super().__init__(name, type, value, rarity, weight, desc)
         self.damage = damage

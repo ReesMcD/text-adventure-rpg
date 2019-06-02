@@ -1,4 +1,4 @@
-from engine.core.model import Model
+from src.engine.core.model import Model
 from abc import abstractmethod
 
 TABLE = "classes"

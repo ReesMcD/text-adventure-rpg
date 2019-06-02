@@ -1,4 +1,4 @@
-from engine.core.model import Model
+from src.engine.core.model import Model
 
 TABLE = "item"
 PK = "name"
@@ -7,7 +7,9 @@ PK = "name"
 class Item(Model):
     """ Class used for simple items. """
 
-    def __init__(self, name="", type="", value=0, rarity="", weight=0, desc=""):
+    def __init__(
+            self, name="", type="", value=0, rarity="", weight=0, desc=""):
+
         super().__init__(TABLE, PK)
         self.name = name
         self.type = type

@@ -1,7 +1,8 @@
 ''' Non Playable Characters '''
-from engine.base.characters.character import Character
-from engine.base.classes.npcclass import NPCClass
-from engine.core.database import Database
+from src.engine.base.characters.character import Character
+from src.engine.base.classes.npcclass import NPCClass
+from src.engine.core.database import Database
+
 
 class NPC(Character):
     """
@@ -29,7 +30,7 @@ class NPC(Character):
             print(" {}:{}".format(key, value))
         print("CR: {}".format(self.challenge_rating))
         print("Actions: {}".format(self.actions))
-    
+
     def get(self, query):
         db = Database()
         result = db.search(self.table, self.pk, query)

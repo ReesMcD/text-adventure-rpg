@@ -10,9 +10,10 @@ class Build(ABC):
 
     def __init__(self, file_name):
         cwd = os.getcwd()
+        src = "src"
         game_path = "game"
         content_path = "content"
-        self.path = os.path.join(cwd, game_path, content_path, file_name)
+        self.path = os.path.join(cwd, src, game_path, content_path, file_name)
 
     @abstractmethod
     def build(self):

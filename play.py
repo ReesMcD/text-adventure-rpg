@@ -1,7 +1,7 @@
 ''' play script '''
 import sys
-from game.build.buildall import BuildAll
-from engine.base.characters.npc import NPC
+from src.game.build.buildall import BuildAll
+from src.engine.base.characters.npc import NPC
 
 
 def main(arg):

@@ -1,11 +1,12 @@
 ''' '''
-from engine.base.characters.character import Character
-from engine.base.classes.playerclass import PlayerClass
-from engine.core.database import Database
+from src.engine.base.characters.character import Character
+from src.engine.base.classes.playerclass import PlayerClass
+from src.engine.core.database import Database
+
 
 class Player(Character):
     """
-    An playable character 
+    An playable character ac
     """
 
     def __init__(
@@ -13,8 +14,8 @@ class Player(Character):
 
         super().__init__(name, race, class_name, inventory)
         self.level = level
-        
-        if class_name: 
+
+        if class_name:
             self.__setPlayerClass(class_name)
 
     def print(self):
@@ -29,7 +30,7 @@ class Player(Character):
             print(" {}:{}".format(key, value))
         print("CR: {}".format(self.challenge_rating))
         print("Actions: {}".format(self.actions))
-    
+
     def get(self, query):
         db = Database()
         result = db.search(self.table, self.pk, query)

@@ -1,4 +1,4 @@
-from engine.base.classes import CharacterClass
+from src.engine.base.classes.characterclass import CharacterClass
 
 STAT_BLOCK = {
     "strength": 0,
@@ -10,15 +10,14 @@ STAT_BLOCK = {
 }
 
 
-
 class PlayerClass(CharacterClass):
     """
     Player Classes
     """
 
     def __init__(
-      self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK, armor_class=0,
-      abilites={}, actions={}, hit_dice=0):
+      self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK,
+            armor_class=0, abilites={}, actions={}, hit_dice=0):
 
         super().__init__(
           name, class_type, hitpoints, stats, armor_class, abilites, actions)
