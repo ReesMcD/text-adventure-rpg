@@ -1,6 +1,6 @@
 from .build import Build
-from src.engine.base.classes.npcclass import NPCClass
-from src.engine.base.classes.playerclass import PlayerClass
+from src.engine.base.characters.classes.npcclass import NPCClass
+from src.engine.base.characters.classes.playerclass import PlayerClass
 
 
 class BuildClasses(Build):

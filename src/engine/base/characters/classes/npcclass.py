@@ -1,5 +1,5 @@
-''' Player Playable Class '''
-from src.engine.base.classes.characterclass import CharacterClass
+''' NPC Player Class '''
+from src.engine.base.characters.classes.characterclass import CharacterClass
 
 STAT_BLOCK = {
     "strength": 0,
@@ -11,9 +11,9 @@ STAT_BLOCK = {
 }
 
 
-class PlayerClass(CharacterClass):
+class NPCClass(CharacterClass):
     '''
-    Abstract class for players classes type.
+    Non Playable Character class type
 
     Attributes:
         name: String of the name of the class
@@ -28,16 +28,16 @@ class PlayerClass(CharacterClass):
     '''
 
     def __init__(
-      self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK,
-            armor_class=0, abilites={}, actions={}, hit_dice=0):
+        self, name="", class_type="", hitpoints=0, stats=STAT_BLOCK,
+            armor_class=0, abilites={}, actions={}, challenge_rating=0):
 
         super().__init__(
-          name, class_type, hitpoints, stats, armor_class, abilites, actions)
-        self.hit_dice = hit_dice
+            name, class_type, hitpoints, stats, armor_class, abilites, actions)
+        self.challenge_rating = challenge_rating
 
     def print(self):
-        """Prints full character class info. """
+        """Prints full character info, ie Name, Race, Stats, etc.  """
         print("Class: {}".format(self.name))
-        self.stats.print()
         print("Armor Class: {}".format(self.armor_class))
+        print("CR: {}".format(self.challenge_rating))
         # TODO: Abilites and Actions

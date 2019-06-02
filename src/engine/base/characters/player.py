@@ -1,6 +1,6 @@
 ''' Playable Character Class '''
-from src.engine.base.characters.character import Character
-from src.engine.base.classes.playerclass import PlayerClass
+from .character import Character
+from src.engine.base.characters.classes.playerclass import PlayerClass
 from src.engine.core.database import Database
 
 TABLE = "player"

@@ -1,6 +1,6 @@
 ''' Non Playable Character Class '''
-from src.engine.base.characters.character import Character
-from src.engine.base.classes.npcclass import NPCClass
+from .character import Character
+from src.engine.base.characters.classes.npcclass import NPCClass
 from src.engine.core.database import Database
 
 TABLE = "npc"
