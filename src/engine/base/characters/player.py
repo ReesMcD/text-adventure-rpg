@@ -31,6 +31,9 @@ class Player(Character):
         self.actions = {}
         self.abilites = {}
         self.hit_dice = 0
+        self.map_location = (0, 0)
+        self.building_location = (0, 0)
+        self.xp = 0
 
         if class_name:
             self.__set_player_class(class_name)
@@ -40,34 +43,20 @@ class Player(Character):
         print("------ {} ------".format(self.name))
         print("Race: {}".format(self.race))
         print("Level: {}".format(self.level))
+        print("XP: {}".format(self.xp))
         print("Class: {}".format(self.class_name))
         print("HP: {}/{}".format(self.current_hitpoints, self.max_hitpoints))
         print("Armor Class: {}".format(self.armor_class))
         print("Stats: ")
         for key, value in self.stats.items():
             print(" {}:{}".format(key, value))
-        print("Actions: {}".format(self.actions))
+        print()
 
-    def get(self, query):
-        db = Database()
-        result = db.search(self.table, self.pk, query)
-        try:
-            player = result[0]
-        except IndexError:
-            print("\n ERROR - Object Not Found \n")
+    def level_up(self):
+        pass
 
-        self.name = player["name"]
-        self.race = player["race"]
-        self.class_name = player["class_name"]
-        self.inventory = player["inventory"]
-        self.level = player["level"]
-        self.max_hitpoints = player["max_hitpoints"]
-        self.current_hitpoints = player["current_hitpoints"]
-        self.armor_class = player["armor_class"]
-        self.stats = player["stats"]
-        self.actions = player["actions"]
-        self.abilites = player["abilites"]
-        self.hit_dice = player["hit_dice"]
+    def move(self, direction: str):
+        pass
 
     def __set_player_class(self, class_name):
         player_class = PlayerClass().get(class_name)

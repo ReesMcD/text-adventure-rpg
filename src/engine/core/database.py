@@ -1,9 +1,10 @@
 from tinydb import TinyDB, Query
+from src.engine.core.config import config
 
 
 class Database():
     def __init__(self):
-        self.database = TinyDB('db.json')
+        self.database = TinyDB(config.save)
 
     def search(self, table: str, field: str, search: str):
         query = Query()

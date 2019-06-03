@@ -1,6 +1,8 @@
 from .items import BuildItems
 from .classes import BuildClasses
 from .npcs import BuildNPCs
+from src.engine.core.database import Database
+from src.engine.core.config import config
 import json
 
 
@@ -9,6 +11,7 @@ class BuildAll():
 
     def __init__(self):
         print("Initializing Build...")
+
         self.__clearDatabase()
         self.build_items = BuildItems()
         self.build_classes = BuildClasses()
@@ -24,5 +27,5 @@ class BuildAll():
         print("Build Complete")
 
     def __clearDatabase(self):
-        with open("db.json", "w") as json_data:
+        with open(config.save, "w") as json_data:
             json.dump(None, json_data)
